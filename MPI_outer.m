@@ -76,7 +76,7 @@ options = sdpsettings('solver',SDPsolver,'verbose',1);
 % Solve
 solvesos(con,obj,options,[cw;cv;cq;cp;cs]);
 
-% Retrieve coefficients of w and V
+% Retrieve coefficients of w and v
 cw = double(cw);
 cv = double(cv);
 
@@ -86,7 +86,7 @@ cv = double(cv);
 figure
 X = sdpvar(1,1); Y = sdpvar(1,1);
 vv = monolist([X;Y],d);
-p = vectorize(sdisplay(cv'*vv + 1)); % v(0,x) + 1
+p = vectorize(sdisplay(cv'*vv + 1)); % v(x) + 1
 [X,Y] = meshgrid(-1:0.005:1,-1:0.005:1);
 Z = eval(p);
 contour(X,Y,Z, [1 1], '-b', 'linewidth',2); hold on
@@ -98,7 +98,7 @@ f_vpo =  @(t,x)([ 2*x(2) ; -0.8*x(1) - 10*(alpha^2*x(1)^2-0.20)*x(2) ]);
 plot(xv(2000:2574,1),xv(2000:2574,2),'-r','LineWidth',2)
 xlabel('x_1'); ylabel('x_2');
 %legend('Outer', 'True')
-title('Van der Pol oscillator ROA')
+title('Van der Pol oscillator MPI set')
 
 
 
