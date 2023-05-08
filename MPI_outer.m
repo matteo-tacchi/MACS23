@@ -19,7 +19,7 @@ alpha = 1.02;
 x = sdpvar(2,1);
 
 
-% Define polynomials w(x) and v(t,x)
+% Define polynomials w(x) and v(x)
 [w,cw] = polynomial(x,d);
 [v,cv] = polynomial(x,d);
 
