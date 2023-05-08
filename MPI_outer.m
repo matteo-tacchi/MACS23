@@ -1,5 +1,5 @@
 % *************************************************************************
-% Problem:  Van der Pol oscillator ROA - dual SOS problem
+% Problem:  Van der Pol oscillator outer MPI approximation - dual SOS problem
 % Requires: Gloptipoly 3, Yalmip + SDP solver (tested with MOSEK and SeDuMi) 
 % Authors:  Milan Korda, Didier Henrion, 2013
 % *************************************************************************
