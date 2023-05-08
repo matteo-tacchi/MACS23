@@ -25,10 +25,10 @@ muT = meas([tT;xT]); % terminal
 nu = meas([t;x;u]); % occupation
 
 % Declare dynamics
-f = % ENTER YOUR DYNAMICS HERE
+f = % Enter your dynamics here
 
 % Declare running cost
-L = % ENTER YOUR RUNNING COST HERE
+L = % Enter your running code here
 
 % Declare feasible set
 X = []; % Enter polynomial inequality constraints here
