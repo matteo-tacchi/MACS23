@@ -41,5 +41,7 @@ momcon = [momcon; mass(mu0) == 1];
 P = % Use msdp as for POP, with optimization objective, moment and support constraints (see user's guide)
 
 %% Solving the (OCP)
+                                                                                        
+mset('yalmip',true);
 
 [status,cost] = % Use msol as for POP
