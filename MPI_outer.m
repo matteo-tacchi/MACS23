@@ -36,9 +36,9 @@ gx = 1 - x'*x ;
 
 
 % SOS multipliers
-[q,cq] = polynomial(x,d-2);
-[p,cp] = polynomial(x,d-2);
-[s,cs] = polynomial(x,d-2);
+[q1,c1] = polynomial(x,d-2);
+[q2,c2] = polynomial(x,d-2);
+[q3,c3] = polynomial(x,d-2);
 
 
 % Lebesgue moments on X
@@ -63,9 +63,9 @@ end
 Lv = jacobian(v,x)*f;
 
 % Constraints 
-con = [ sos( b*v-Lv - q*gx) ; sos(q) ];    
-con = [ con ; sos(w - v - 1 - p*gx); sos(p) ]; % w >= v + 1 on {0} x X
-con = [ con ; sos( w - s*gx) ; sos(s)];   % w >= 0 on X
+con = [ sos( b*v-Lv - q1*gx) ; sos(q1) ];    
+con = [ con ; sos(w - v - 1 - q2*gx); sos(q2) ]; % w >= v + 1 on {0} x X
+con = [ con ; sos( w - q3*gx) ; sos(q3)];   % w >= 0 on X
 
 % Objective
 obj = cw'*l; % minimization of int w d_lambda
@@ -74,7 +74,7 @@ obj = cw'*l; % minimization of int w d_lambda
 options = sdpsettings('solver',SDPsolver,'verbose',1);
 
 % Solve
-solvesos(con,obj,options,[cw;cv;cq;cp;cs]);
+solvesos(con,obj,options,[cw;cv;c1;c2;c3]);
 
 % Retrieve coefficients of w and v
 cw = double(cw);
