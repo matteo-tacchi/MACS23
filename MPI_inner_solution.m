@@ -96,3 +96,9 @@ plot(xv(2000:2574,1),xv(2000:2574,2),'-r','LineWidth',2)
 xlabel('x_1'); ylabel('x_2');
 %legend('Outer', 'True')
 title('Van der Pol oscillator ROA')
+                       
+% Plot the state constraint set
+theta = linspace(0, 2*pi, 1000);
+x = cos(theta);
+y = sin(theta);
+plot(x, y, 'k', 'lineWidth',2); 
